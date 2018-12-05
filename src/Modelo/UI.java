@@ -28,7 +28,7 @@ public class UI extends javax.swing.JFrame {
      * Creates new form UI
      */
     public UI() {
-        //e.start();
+        e.start();
 
         this.setUndecorated(true);
         initComponents();
@@ -511,6 +511,7 @@ public class UI extends javax.swing.JFrame {
         tblContactos.setModel(agenda.model);
         lblCantContactos.setText(Integer.toString(agenda.contarTodos()));
         e.detenerHilo();
+        
 
 
     }//GEN-LAST:event_btnMostrarTodosActionPerformed

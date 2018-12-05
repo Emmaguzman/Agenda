@@ -24,9 +24,9 @@ import javax.swing.JOptionPane;
 public class Hilo extends Thread {
 
     boolean salir;
-
-    String origenConArchivo = "D:\\PROGRAMACION\\Java\\Leyendocsv\\Contactos1.csv";
-    String carpetaDestino = "C:\\Users\\Emmanuel\\Desktop\\CSVs";
+    String escritorio= System.getProperty("user.home")+"\\desktop";
+    String origenConArchivo = "D:\\PROGRAMACION\\Java\\Leyendocsv\\Contactos2.csv";
+    String carpetaDestino = escritorio+"\\CSVs";
     String directorio = "D:\\PROGRAMACION\\Java\\Agenda2_1\\src\\";
     FileReader archivo;
     File origenArchivo, archivosCarpeta;
@@ -78,19 +78,19 @@ public class Hilo extends Thread {
                     }
                 } catch (ArrayIndexOutOfBoundsException x) {
                     System.out.println("EL HILO NO ENCONTRO MAS CONTACTOS");
-
+                   
                 }
-
+                 
             }
-
-            moverArchivo(origenConArchivo, carpetaDestino + "/nuevo.csv");
+            
+            moverArchivo(origenConArchivo, carpetaDestino + "/nuevoillo.csv");
 
         } catch (FileNotFoundException e) {
 
             JOptionPane.showMessageDialog(null, "ERROR EN EL HILO!! EL ARCHIVO NO SE ENCUENTRA");
             salir = true;
         } catch (Exception e) {
-            e.printStackTrace();
+            e.getMessage();
         }
 
     }
